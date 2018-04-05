@@ -6,11 +6,14 @@ import {MatIconModule} from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import {MatCardModule} from '@angular/material/card';
+import { AppRoutingModule } from './/app-routing.module';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+    AuthenticateComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +22,7 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
