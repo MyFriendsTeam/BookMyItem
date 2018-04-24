@@ -11,5 +11,6 @@ export class AuthenticateComponent implements OnInit {
 
   ngOnInit() {
   }
+  hide=true;
 
 }
