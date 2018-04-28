@@ -1,16 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-//import {MatToolbarModule} from '@angular/material/toolbar';
-//import {MatIconModule} from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
-//import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './/app-routing.module';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { NavigationbarComponent } from './layout/navigationbar/navigationbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import {MatFormFieldModule} from '@angular/material/form-field';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -45,6 +40,13 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import { FormsModule }    from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthenticationService, UserService } from './sevices/index';
+// used to create fake backend
+import { fakeBackendProvider } from './helpers/index';
+import { JwtInterceptor } from './helpers/index';
+import { AuthGuard } from './gaurds/index';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,13 +56,7 @@ import {
   ],
   imports: [
     BrowserModule,
-    // MatButtonModule, 
-    // MatCheckboxModule,
-    // MatToolbarModule,
-    // MatIconModule,
-    // MatCardModule,
-     AppRoutingModule,
-    //MatFormFieldModule,
+    AppRoutingModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -94,8 +90,23 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService,
+    AuthenticationService,
+        UserService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: JwtInterceptor,
+            multi: true
+        },
+
+        // provider used to create fake backend
+        fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
