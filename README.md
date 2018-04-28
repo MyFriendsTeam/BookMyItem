@@ -33,3 +33,6 @@ To upload angular app to git pages use `ng build --prod --base-href https://myfr
 ## host your app
 
 To host use command `sudo angular-cli-ghpages`
+
+
+## Using angular snackbar

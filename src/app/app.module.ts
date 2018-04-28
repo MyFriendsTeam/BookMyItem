@@ -47,12 +47,18 @@ import { AuthenticationService, UserService } from './sevices/index';
 import { fakeBackendProvider } from './helpers/index';
 import { JwtInterceptor } from './helpers/index';
 import { AuthGuard } from './gaurds/index';
+import { RegistrationComponent } from './registration/registration.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     AuthenticateComponent,
-    NavigationbarComponent
+    NavigationbarComponent,
+    RegistrationComponent,
+    HomePageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
