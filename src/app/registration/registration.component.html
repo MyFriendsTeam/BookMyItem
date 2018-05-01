@@ -1,6 +1,6 @@
 <div class="login-container">
   <form class="login-wrapper" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-    <h2>Login</h2>
+    <h2 class="text-center text-color">Register User</h2>
     <mat-form-field class="example-full-width">
       <input matInput placeholder="First Name" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required>
     </mat-form-field>
@@ -18,5 +18,4 @@
     <button mat-raised-button color="primary">Register</button>
     <a mat-button routerLink="/auth"> Cancel</a>
   </form>
-
 </div>

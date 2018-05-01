@@ -1,5 +1,4 @@
-.login-container {
-    background-color:teal;
+.login-container {    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,9 +7,16 @@
 .login-wrapper {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    background-color: wheat;
+    width: 400px;
+    background-color: rgba(0,0,0,.03);
     border-radius: 5px;
     padding: 10px;
 
+}
+.text-center {
+    text-align: center;
+    color: white
+}
+.text-color {
+    color: rgba(0,0,0,.54);
 }
