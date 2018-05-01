@@ -8,12 +8,10 @@ import { UserService } from '../sevices/user.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-
-  ngOnInit() {
-  }
   model: any = {};
   loading = false;
-
+  ngOnInit() {
+  }
   constructor(
     private router: Router,
     private userService: UserService,
@@ -24,13 +22,13 @@ export class RegistrationComponent implements OnInit {
     this.userService.create(this.model)
       .subscribe(
         data => {
-          this.snackBar.open("Registration success", "action", {
+          this.snackBar.open('Registration success', 'action', {
             duration: 2000,
           });
           this.router.navigate(['auth']);
         },
         error => {
-          this.snackBar.open("Registration fail", "action", {
+          this.snackBar.open('Registration fail', 'action', {
             duration: 2000,
           });
           this.loading = false;
