@@ -42,7 +42,7 @@ import {
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthenticationService, UserService } from './sevices/index';
+import { AuthenticationService, UserService, ProductsService } from './sevices/index';
 // used to create fake backend
 import { fakeBackendProvider } from './helpers/index';
 import { JwtInterceptor } from './helpers/index';
@@ -110,6 +110,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
     AuthenticationService,
     AuthenticationService,
     UserService,
+    ProductsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
