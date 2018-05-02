@@ -50,6 +50,9 @@ import { AuthGuard } from './gaurds/index';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductsComponent } from './products/products.component';
+import { NewProductComponent } from './products/new-product/new-product.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +61,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavigationbarComponent,
     RegistrationComponent,
     HomePageComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductsComponent,
+    NewProductComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
