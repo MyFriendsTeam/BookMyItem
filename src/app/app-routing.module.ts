@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegistrationComponent } from './registration/registration.component';
-import {DashboardComponent} from '../app/dashboard/dashboard.component';
+import { DashboardComponent } from '../app/dashboard/dashboard.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   { path: 'auth', component: AuthenticateComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'products', component: ProductsComponent },
   { path: '', component: HomePageComponent },
 ];
 @NgModule({

@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models';
-
+import { UserService } from '../sevices';
+import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ProductsService {
-  public products: Product[];
+  products: Product[] = [];
+  constructor(private userService: UserService, private http: HttpClient) {
+    this.addSampleData()
+  }
 
-  constructor() { }
   addProduct(product: Product): void {
     //http service and then push in service
     this.products.push(product);
@@ -16,6 +19,13 @@ export class ProductsService {
   }
   getAll(): Product[] {
     return this.products;
+  }
+  addSampleData() {
+    this.products.push(new Product(1, 'pro1', '11', 12, 12, 12))
+    this.products.push(new Product(1, 'pro1', '11', 12, 12, 12))
+    this.products.push(new Product(1, 'pro1', '11', 12, 12, 12))
+    this.products.push(new Product(1, 'pro1', '11', 12, 12, 12))
+    this.products.push(new Product(1, 'pro1', '11', 12, 12, 12))
   }
 
 }

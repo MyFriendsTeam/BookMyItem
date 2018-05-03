@@ -108,7 +108,6 @@ import { ProductListComponent } from './products/product-list/product-list.compo
   providers: [
     AuthGuard,
     AuthenticationService,
-    AuthenticationService,
     UserService,
     ProductsService,
     {

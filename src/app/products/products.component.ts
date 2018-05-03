@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
+import { ProductsService } from '../sevices/index'
 
 @Component({
   selector: 'app-products',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductsService) { }
 
   ngOnInit() {
+    debugger
+   // this.productService.getAll()
+  }
+  displayedColumns = ['id', 'name', 'unitPrice', 'code', 'units'];
+  dataSource = new MatTableDataSource(this.productService.getAll());
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 
 }
