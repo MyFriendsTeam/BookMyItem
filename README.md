@@ -36,3 +36,17 @@ To host use command `sudo angular-cli-ghpages`
 
 
 ## Using angular snackbar
+
+
+## Coding Standards
+
+1. Should not use any strings in application. Every string should come from constants or helper classes
+    a. All Routing urls should come from routingUrls class
+    b. all validation related methods should be in utility class files
+    c. every object should have a model defined in models folder
+    d. All possible calculations should be in model object itself
+
+2. Method should have documentation 
+3. Methods should not exceed 10 lines of code
+4. use ' instead of " through out application
+5. All display names shold come from localization service
