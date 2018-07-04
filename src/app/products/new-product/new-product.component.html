@@ -1,3 +1,22 @@
-<p>
-  new-product works!
-</p>
+<form class="login-wrapper" (ngSubmit)="f.form.valid && onSubmitProduct()" #f="ngForm" novalidate>
+  <h2 class="text-center text-color">Product Details</h2>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="product name" name="name" [(ngModel)]="product.name" #firstName="ngModel" required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Code" name="code" [(ngModel)]="product.code" #lastName="ngModel">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Units" name="units" [(ngModel)]="product.units" #username="ngModel" required>
+  </mat-form-field>  
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Unit Price" name="unitPrice" [(ngModel)]="product.unitPrice" #password="ngModel" required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Discount" name="discount" [(ngModel)]="product.discount" #password="ngModel">
+  </mat-form-field>
+  <button mat-raised-button color="primary">Add</button>
+  <button mat-raised-button color="primary">cancel</button>
+</form>

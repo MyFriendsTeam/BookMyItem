@@ -13,10 +13,12 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     debugger
+    this.productService.getAll()
    // this.productService.getAll()
   }
   displayedColumns = ['id', 'name', 'unitPrice', 'code', 'units'];
-  dataSource = new MatTableDataSource(this.productService.getAll());
+  dataSource = new MatTableDataSource(this.productService.allProducts);
+  allProducts = this.productService.allProducts;
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace

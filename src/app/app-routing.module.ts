@@ -12,8 +12,7 @@ const routes: Routes = [
   { path: RoutingUrls.Register, component: RegistrationComponent },
   { path: RoutingUrls.Dashboard, component: DashboardComponent },
   { path: RoutingUrls.Products, component: ProductsComponent },
-  // { path: RoutingUrls.Default, component: HomePageComponent },
-  { path: RoutingUrls.Default, component: ProductsComponent },
+  { path: RoutingUrls.Default, component: ProductsComponent }, // HomePageComponent
 ];
 @NgModule({
   exports: [RouterModule],
